@@ -3,6 +3,8 @@ from user_service import app, init_app
 import threading
 from sqlalchemy import create_engine
 from user_service.core import BaseModel
+from user_service import db
+from user_service.models import User
 from user_service.tests.integration.config import basedir
 import os
 # Tornado imports
@@ -18,6 +20,16 @@ def create_database(app):
 
 def shutdown_server():
     IOLoop.instance().stop()
+
+
+def after_scenario(context, scenario):
+    print("Clearing DB")
+    try:
+        User.query.filter_by(id=context.last_user_id).delete()
+        db.session.commit()
+        print("DB Cleared - User Gone")
+    except AttributeError:
+        pass
 
 
 def before_all(context):
