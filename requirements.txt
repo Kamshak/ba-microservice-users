@@ -10,3 +10,5 @@ requests
 alembic
 pyhamcrest
 tornado
+Flask-JWT
+flask-cors

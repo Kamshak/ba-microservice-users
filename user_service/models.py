@@ -13,10 +13,10 @@ roles_users = db.Table('roles_users', BaseModel.metadata,
 
 class User(BaseModel):
     id = db.Column(db.String(255), primary_key=True, default=generate_uuid)
-    first_name = db.Column(db.String(50), nullable=False)
-    last_name = db.Column(db.String(50), nullable=False)
-    phone = db.Column(db.String(14), nullable=False)
-    birth_date = db.Column(db.Date, nullable=False)
+    first_name = db.Column(db.String(50), nullable=True)
+    last_name = db.Column(db.String(50), nullable=True)
+    phone = db.Column(db.String(14), nullable=True)
+    birth_date = db.Column(db.Date, nullable=True)
     email = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(20), nullable=False)
     active = db.Column(db.Boolean, default=False)

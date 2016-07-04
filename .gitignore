@@ -2,3 +2,4 @@
 .idea/
 local_config.py
 users.db
+.vagrant/
