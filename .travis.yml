@@ -7,6 +7,7 @@ directories:
   - /var/lib/docker
 
 before_install:
+  - pip install --user docker-compose==1.6.2
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - docker-compose up -d
