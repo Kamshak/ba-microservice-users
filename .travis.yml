@@ -24,6 +24,9 @@ before_install:
   # AWS CLI
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
+  # Output versions
+  - docker version
+  - docker-compose version
 
 install:
   - docker-compose up -d
