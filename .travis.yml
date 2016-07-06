@@ -10,7 +10,7 @@ before_install:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - docker-compose up -d
-  - docker exec bamicroserviceusers_web_1 /bin/bash -c "behave user_service/tests/integration/users_crud.feature"
+  - docker exec users-service /bin/bash -c "behave user_service/tests/integration/users_crud.feature"
 
 install: true
 
