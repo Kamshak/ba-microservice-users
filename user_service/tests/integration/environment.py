@@ -45,4 +45,5 @@ def before_all(context):
 
 def after_all(context):
     shutdown_server()
-    os.remove(os.path.join(basedir, 'users.db'))
+    if (not os.environ["MYSQL_HOST"]):
+        os.remove(os.path.join(basedir, 'users.db'))
