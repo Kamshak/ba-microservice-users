@@ -9,4 +9,4 @@ RUN pip install MySQL-python
 
 WORKDIR /opt/app
 EXPOSE 80
-CMD ["python", "run.py"]
+CMD python manager.py db upgrade && python run.py
